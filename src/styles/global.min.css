@@ -1,0 +1,2 @@
+:root{--color-main: #1e2d69;--color-bg: #f3f3f3}*,*::before,*::after{box-sizing:border-box}html,body,a{cursor:none}body{font-family:"游ゴシック",sans-serif;background-color:var(--color-bg)}body,h1,h2,h3,h4,p,ul,li{margin:0;padding:0}li{list-style:none}
+/*# sourceMappingURL=global.min.css.map */

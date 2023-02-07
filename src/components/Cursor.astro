@@ -1,0 +1,49 @@
+---
+---
+
+<div id="cursor" class="cursor"></div>
+
+<style lang="scss">
+  .cursor {
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    z-index: 2000;
+    transition: width 0.2s, height 0.2s, top 0.2s, left 0.2s;
+    transform: translate(0, 0);
+    pointer-events: none;
+
+    &--hover {
+      top: -15px;
+      left: -15px;
+      width: 30px;
+      height: 30px;
+      background: rgba(245, 223, 156, 0.5);
+      mix-blend-mode: difference;
+    }
+  }
+</style>
+
+<script>
+  const cursor: any = document.getElementById("cursor");
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.transform =
+      "translate(" + e.clientX + "px, " + e.clientY + "px)";
+  });
+
+  const link = document.querySelectorAll("a");
+
+  for (let i = 0; i < link.length; i++) {
+    link[i].addEventListener("mouseover", (e) => {
+      cursor.classList.add("cursor--hover");
+    });
+    link[i].addEventListener("mouseout", (e) => {
+      cursor.classList.remove("cursor--hover");
+    });
+  }
+</script>
