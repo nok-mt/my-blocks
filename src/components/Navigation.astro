@@ -1,16 +1,19 @@
 ---
-const navigationItems = [
+type navigationItems = { href: string; title: string }[];
+
+const navigationItems: navigationItems = [
   { href: "/", title: "HOME" },
-  { href: "/about", title: "ABOUT" },
-  { href: "/blocks", title: "BLOCKS" },
+  { href: "/about/", title: "ABOUT" },
+  { href: "/blocks/", title: "BLOCKS" },
 ];
+const path: string = Astro.url.pathname;
 ---
 
 <nav>
   <ul>
     {
       navigationItems.map((item) =>
-        Astro.url.pathname === item.href ? (
+        path === item.href ? (
           <li>
             <a href={item.href} class="current">
               {item.title}
@@ -70,7 +73,7 @@ const navigationItems = [
   a {
     display: block;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 0;
     font-size: 0.75rem;
     font-weight: 700;
     text-align: center;
