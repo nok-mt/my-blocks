@@ -4,7 +4,7 @@ type navigationItems = { href: string; title: string }[];
 const navigationItems: navigationItems = [
   { href: "/", title: "HOME" },
   { href: "/about/", title: "ABOUT" },
-  { href: "/blocks/", title: "BLOCKS" },
+  { href: "/works/", title: "WORKS" },
 ];
 const path: string = Astro.url.pathname;
 ---
@@ -54,7 +54,7 @@ const path: string = Astro.url.pathname;
     overflow: hidden;
     @media (min-width: 768px) {
       width: 80px;
-      box-shadow: 5px 4px 0 var(--color-main);
+      box-shadow: 5px 4px 0 var(--color-main), 0 4px 0 var(--color-main);
       &:first-child {
         border-radius: 0 1rem 0 0;
       }
