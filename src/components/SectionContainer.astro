@@ -1,0 +1,17 @@
+---
+export interface Props {
+  bgColor?: string;
+}
+const { bgColor = "--color-bg" } = Astro.props;
+---
+
+<section>
+  <slot />
+</section>
+
+<style define:vars={{ bgColor }}>
+  section {
+    padding: 5rem max(5%, (100vw - 960px) / 2);
+    background-color: var(--bgColor);
+  }
+</style>
